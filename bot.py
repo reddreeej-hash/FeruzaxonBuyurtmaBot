@@ -68,22 +68,25 @@ async def tort(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["tort"] = update.message.text
 
     xabar = (
-        "🎂 Yangi buyurtma!\n\n"
+        "🎂 Buyurtmangiz:\n\n"
         f"👤 Ism: {context.user_data['ism']}\n"
         f"📞 Telefon: {context.user_data['telefon']}\n"
         f"📅 Sana: {context.user_data['sana']}\n"
         f"🍰 Buyurtma: {context.user_data['buyurtma']}\n"
-        f"🎀 Tort qanday bo‘lsin: {context.user_data['tort']}"
+        f"🎀 Tort: {context.user_data['tort']}\n\n"
+        "Tasdiqlaysizmi?"
     )
 
-    await context.bot.send_message(
-        chat_id=ADMIN_ID,
-        text=xabar
-    )
+    keyboard = [
+        [
+            InlineKeyboardButton("✅ Tasdiqlash", callback_data="tasdiq"),
+            InlineKeyboardButton("❌ Bekor qilish", callback_data="bekor")
+        ]
+    ]
 
     await update.message.reply_text(
-        "✅ Buyurtmangiz qabul qilindi!\n\n"
-"📞 Tez orada siz bilan bog‘lanamiz 😊"
+        xabar,
+        reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
     return ConversationHandler.END
