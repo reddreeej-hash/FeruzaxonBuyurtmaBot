@@ -89,5 +89,17 @@ conv = ConversationHandler(
 app.add_handler(conv)
 
 print("Feruzaxon Buyurtma Bot ishga tushdi")
+from flask import Flask
+import threading
 
+web = Flask(__name__)
+
+@web.route("/")
+def home():
+    return "Bot ishlayapti"
+
+def run_web():
+    web.run(host="0.0.0.0", port=10000)
+
+threading.Thread(target=run_web).start()
 app.run_polling()
