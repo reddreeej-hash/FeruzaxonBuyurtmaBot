@@ -108,6 +108,21 @@ conv = ConversationHandler(
     fallbacks=[]
 )
 
+async def tasdiqlash(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    await context.bot.send_message(
+        chat_id=ADMIN_ID,
+        text="🎂 Yangi buyurtma tasdiqlandi!"
+    )
+
+    await query.message.reply_text(
+        "✅ Buyurtmangiz qabul qilindi!\n\n"
+        "📞 Tez orada siz bilan bog‘lanamiz 😊"
+    )
+
+
 app.add_handler(conv)
 
 print("Feruzaxon Buyurtma Bot ishga tushdi")
