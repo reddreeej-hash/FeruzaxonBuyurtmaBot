@@ -82,7 +82,8 @@ async def tort(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     await update.message.reply_text(
-        "✅ Rahmat! Buyurtmangiz qabul qilindi."
+        "✅ Buyurtmangiz qabul qilindi!\n\n"
+"📞 Tez orada siz bilan bog‘lanamiz 😊"
     )
 
     return ConversationHandler.END
