@@ -123,7 +123,7 @@ async def tasdiqlash(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-app.add_handler(conv)
+app.add_handler(CallbackQueryHandler(tasdiqlash, pattern="tasdiq"))
 
 print("Feruzaxon Buyurtma Bot ishga tushdi")
 from flask import Flask
