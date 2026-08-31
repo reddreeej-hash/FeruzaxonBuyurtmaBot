@@ -107,7 +107,8 @@ conv = ConversationHandler(
         BUYURTMA: [MessageHandler(filters.TEXT, buyurtma)],
         TORT: [MessageHandler(filters.TEXT, tort)],
     },
-    fallbacks=[]
+    fallbacks=[],
+    allow_reentry=True
 )
 
 async def tasdiqlash(update: Update, context: ContextTypes.DEFAULT_TYPE):
