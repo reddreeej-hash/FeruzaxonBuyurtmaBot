@@ -32,19 +32,35 @@ async def ism(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def telefon(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["telefon"] = update.message.text
-    await update.message.reply_text("📅 Qaysi sana kerak?")
+
+    await update.message.reply_text(
+        "📅 Buyurtma qaysi kunga kerak?\n\n"
+        "📝 Misol: 17-sentabr\n\n"
+        "Iltimos, kun va oyini yozing 😊"
+    )
+
     return SANA
 
 
 async def sana(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["sana"] = update.message.text
-    await update.message.reply_text("🍰 Nima buyurtma qilmoqchisiz?")
+
+    await update.message.reply_text(
+        "🍰 Qanday buyurtma qilmoqchisiz?\n\n"
+        "Masalan: shokoladli tort, to‘y torti yoki boshqa tur 😊"
+    )
+
     return BUYURTMA
 
 
 async def buyurtma(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["buyurtma"] = update.message.text
-    await update.message.reply_text("🎂 Tort qanday bo‘lsin?")
+
+    await update.message.reply_text(
+        "🎂 Tort qanday bo‘lishini xohlaysiz?\n\n"
+        "Masalan: rangi, dizayni yoki ustidagi yozuvi 😊"
+    )
+
     return TORT
 
 
