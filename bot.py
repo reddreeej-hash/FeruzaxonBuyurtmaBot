@@ -38,7 +38,9 @@ async def telefon(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["telefon"] = update.message.text
 
     await update.message.reply_text(
-        "📅 Buyurtma qaysi kunga kerak?"
+        "📅 Buyurtma qaysi kunga kerak?\n\n"
+        "📝 Misol: 17-sentabr\n\n"
+        "Iltimos, kun va oyini yozing 😊"
     )
 
     return SANA
@@ -59,7 +61,8 @@ async def soat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["soat"] = update.message.text
 
     await update.message.reply_text(
-        "🍰 Qanday buyurtma qilmoqchisiz?"
+        "🍰 Qanday buyurtma qilmoqchisiz?\n\n"
+        "Masalan: shokoladli tort, to‘y torti yoki boshqa tur 😊"
     )
 
     return BUYURTMA
