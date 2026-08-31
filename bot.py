@@ -17,6 +17,8 @@ ISM, TELEFON, SANA, BUYURTMA, TORT = range(5)
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    context.user_data.clear()
+
     await update.message.reply_text(
         "🍰 Feruzaxon Buyurtma Bot\n\n"
         "Assalomu alaykum!\n"
