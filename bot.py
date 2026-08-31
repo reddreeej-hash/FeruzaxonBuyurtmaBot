@@ -123,8 +123,19 @@ async def tasdiqlash(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
+async def bekor_qilish(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    await query.message.reply_text(
+        "❌ Buyurtma bekor qilindi.\n\n"
+        "Qaytadan boshlash uchun /start bosing."
+    )
+
+
 app.add_handler(conv)
 app.add_handler(CallbackQueryHandler(tasdiqlash, pattern="tasdiq"))
+app.add_handler(CallbackQueryHandler(bekor_qilish, pattern="bekor"))
 
 print("Feruzaxon Buyurtma Bot ishga tushdi")
 
@@ -141,4 +152,5 @@ def run_web():
     web.run(host="0.0.0.0", port=10000)
 
 threading.Thread(target=run_web).start()
+
 app.run_polling()
