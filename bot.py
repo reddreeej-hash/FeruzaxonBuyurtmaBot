@@ -125,12 +125,13 @@ async def tasdiqlash(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     xabar = (
-        "🎂 Yangi buyurtma!\n\n"
-        f"👤 Ism: {context.user_data['ism']}\n"
-        f"📞 Telefon: {context.user_data['telefon']}\n"
-        f"📅 Sana: {context.user_data['sana']}\n"
-        f"🍰 Buyurtma: {context.user_data['buyurtma']}\n"
-        f"🎀 Tort: {context.user_data['tort']}"
+    "🎂 Yangi buyurtma!\n\n"
+    f"👤 Ism: {context.user_data['ism']}\n"
+    f"📞 Telefon: {context.user_data['telefon']}\n"
+    f"📅 Sana: {context.user_data['sana']}\n"
+    f"⏰ Soat: {context.user_data['soat']}\n"
+    f"🍰 Buyurtma: {context.user_data['buyurtma']}\n"
+    f"🎀 Tort: {context.user_data['tort']}"
     )
 
     await context.bot.send_message(
