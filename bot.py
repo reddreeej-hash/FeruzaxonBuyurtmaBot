@@ -109,12 +109,13 @@ app = Application.builder().token(TOKEN).build()
 conv = ConversationHandler(
     entry_points=[CommandHandler("start", start)],
     states={
-        ISM: [MessageHandler(filters.TEXT, ism)],
-        TELEFON: [MessageHandler(filters.TEXT, telefon)],
-        SANA: [MessageHandler(filters.TEXT, sana)],
-        BUYURTMA: [MessageHandler(filters.TEXT, buyurtma)],
-        TORT: [MessageHandler(filters.TEXT, tort)],
-    },
+    ISM: [MessageHandler(filters.TEXT, ism)],
+    TELEFON: [MessageHandler(filters.TEXT, telefon)],
+    SANA: [MessageHandler(filters.TEXT, sana)],
+    SOAT: [MessageHandler(filters.TEXT, soat)],
+    BUYURTMA: [MessageHandler(filters.TEXT, buyurtma)],
+    TORT: [MessageHandler(filters.TEXT, tort)],
+    }
     fallbacks=[],
     allow_reentry=True
 )
