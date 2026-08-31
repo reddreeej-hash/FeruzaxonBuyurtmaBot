@@ -13,7 +13,7 @@ from telegram.ext import (
 TOKEN = "8987995533:AAEU33YgqvQaMdeHtYv2h8oxjMTKSnrO9bE"
 ADMIN_ID = 7696134951
 
-ISM, TELEFON, SANA, BUYURTMA, TORT = range(5)
+ISM, TELEFON, SANA, SOAT, BUYURTMA, TORT = range(6)
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
