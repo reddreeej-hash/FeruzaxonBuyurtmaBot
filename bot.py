@@ -173,6 +173,10 @@ web = Flask(__name__)
 def home():
     return "Bot ishlayapti"
 
+@web.route("/health")
+def health():
+    return "OK"
+
 def run_web():
     web.run(host="0.0.0.0", port=10000)
 
