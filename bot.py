@@ -184,7 +184,11 @@ threading.Thread(target=run_web, daemon=True).start()
 
 while True:
     try:
-        app.run_polling()
+        app.run_polling(
+            drop_pending_updates=True
+        )
     except Exception as e:
         print("Bot xatosi:", e)
+        import time
+        time.sleep(5)
         continue
