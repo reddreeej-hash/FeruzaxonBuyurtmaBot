@@ -176,6 +176,11 @@ def home():
 def run_web():
     web.run(host="0.0.0.0", port=10000)
 
-threading.Thread(target=run_web).start()
+threading.Thread(target=run_web, daemon=True).start()
 
-app.run_polling()
+while True:
+    try:
+        app.run_polling()
+    except Exception as e:
+        print("Bot xatosi:", e)
+        continue
