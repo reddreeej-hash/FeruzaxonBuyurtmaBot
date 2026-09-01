@@ -166,21 +166,27 @@ print("Feruzaxon Buyurtma Bot ishga tushdi")
 
 from flask import Flask
 import threading
+import time
 
 web = Flask(__name__)
+
 
 @web.route("/")
 def home():
     return "Bot ishlayapti"
 
+
 @web.route("/health")
 def health():
     return "OK"
 
+
 def run_web():
     web.run(host="0.0.0.0", port=10000)
 
+
 threading.Thread(target=run_web, daemon=True).start()
+
 
 while True:
     try:
@@ -189,6 +195,4 @@ while True:
         )
     except Exception as e:
         print("Bot xatosi:", e)
-        import time
         time.sleep(5)
-        continue
